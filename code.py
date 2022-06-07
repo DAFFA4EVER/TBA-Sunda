@@ -19,7 +19,7 @@ def parser(str):
     s = str.split()
     # check whether it is gramatically correct
     for i in range(3):
-        lexical(s[i], [subject, verb, object]) # kamu sesuain aja pemakaiannya
+        lexical(s[i], [subject, verb, object])  # kamu sesuain aja pemakaiannya
         if i == 0 and s[i] not in subject:
             return False
         elif i == 1 and s[i] not in verb:
@@ -28,6 +28,7 @@ def parser(str):
             return False
 
     return True
+
 
 def lexical(word, grammar):
     flag = False
@@ -45,7 +46,8 @@ def lexical(word, grammar):
                     check = False
                     flag = False
             i += 1
-    return flag        
+    return flag
+
 
 if __name__ == "__main__":
-    parser(input("Input your sentence : "))
+    print(parser(input("Input your sentence : ")))
