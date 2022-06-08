@@ -15,19 +15,27 @@ def parser(str):
     verb = ["nyeuseuh", "dahar", "diajar"]
     object = ["baju", "sangu", "matematika", "peuyeum", "nyerat"]
 
+    lex = True
+    par = True
+
     # create list to separate each word so it is easier to iterate
     s = str.split()
     # check whether it is gramatically correct
     for i in range(3):
-        lexical(s[i], [subject, verb, object])  # kamu sesuain aja pemakaiannya
+        lex = (lexical(s[i], [subject, verb, object]) and lex)
         if i == 0 and s[i] not in subject:
-            return False
+            par = False
         elif i == 1 and s[i] not in verb:
-            return False
+            par = False
         elif i == 2 and s[i] not in object:
-            return False
+            par = False
 
-    return True
+    if not lex:
+        print("This sentence is not found in this language")
+    if not par:
+        print("This sentence is gramatically incorrect")
+    if lex and par:
+        print("This sentence is correct!")
 
 
 def lexical(word, grammar):
@@ -50,4 +58,4 @@ def lexical(word, grammar):
 
 
 if __name__ == "__main__":
-    print(parser(input("Input your sentence : ")))
+    parser(input("Input your sentence : "))
