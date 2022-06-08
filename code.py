@@ -13,7 +13,7 @@ def parser(str):
     """
     subject = ["urang", "maneh"]
     verb = ["nyeuseuh", "dahar", "diajar"]
-    object = ["baju", "sangu", "matematika", "peuyeum", "nyerat"]
+    object = ["calana", "sangu", "ngaos", "peuyeum", "nyerat"]
 
     lex = True
     par = True
