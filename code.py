@@ -104,9 +104,9 @@ def new_lexical(word):
     for c in word:
         mystate[2] = c
         mystate = state(mystate)
-        print(f'{mystate[0]} [{c}]', end=" -> ")
+        print(f'[{c}] -> {mystate[0]}', end=" ")
         if(mystate[0] == 'qf'):
-            print('qff', end=' -> ')
+            print('[space] -> qff', end=' ')
     return mystate[3]
 
 
@@ -180,6 +180,7 @@ if __name__ == "__main__":
     str = input("Input your sentence: ")
     s = str.split()
     lex = True
+    print('q0', end=' ')
     for i in range(len(s)):
         lex = new_lexical(s[i]) and lex
     if lex:
