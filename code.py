@@ -105,6 +105,8 @@ def new_lexical(word):
         mystate[2] = c
         mystate = state(mystate)
         print(f'{mystate[0]} [{c}]', end=" -> ")
+        if(mystate[0] == 'qf'):
+            print('qff', end=' -> ')
     return mystate[3]
 
 
@@ -112,7 +114,7 @@ def state(mystate):
     state_arr = [
         ['q0', None, {'m': 'q5', 'n': 'q8', 'u': 'q1',
                       'd': 'q18', 'c': 'q25', 'p': 'q28', 's': 'q37'}],
-        # maneh
+        # manehs
         ['q5', 'm', {'a': 'q6'}], ['q6', 'a', {'n': 'q7'}], [
             'q7', 'n', {'e': 'q15'}], ['q15', 'e', {'h': 'qf'}],
 
