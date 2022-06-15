@@ -92,11 +92,10 @@ def parser(str):
         else:
             break
 
-    print()
     if symbol == "EOS" and len(stack) == 0:
-        print("This sentence is gramatically correct!")
+        print("<This sentence is gramatically correct!>")
     else:
-        print("This sentece is gramatically incorrect.")
+        print("<This sentece is gramatically incorrect!>")
 
 
 def new_lexical(word):
@@ -184,7 +183,7 @@ if __name__ == "__main__":
     for i in range(len(s)):
         lex = new_lexical(s[i]) and lex
     if lex:
-        print("This sentence is valid!")
+        print("\n\n<This sentence is valid!>")
         parser(str)
     else:
-        print("This sentence is not valid!")
+        print("\n\n<This sentence is not valid!>")
